@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="1"
+            failures="1"
+            tests="1">
+
+  <testsuite name="with-page-objects.google"
+    errors="1" failures="1" hostname="" id="" package="with-page-objects" skipped="0"
+    tests="1" time="15.38" timestamp="">
+  
+    <testcase name="should find nightwatch.js in results" classname="with-page-objects.google" time="6.224" assertions="1">  <failure message="Timed out while waiting for element &lt;input[value=&#34;Google Search&#34;]&gt; to be present for 1000 milliseconds. - expected &#34;visible&#34; but got: &#34;not found&#34; (1034ms)">    at Page.submit (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/nightwatch/page-objects/google/search.js:17:10)
+    at DescribeInstance.&lt;anonymous&gt; (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/nightwatch/examples/with-page-objects/google.js:20:14)</failure>
+
+    
+    <error message="Timed out while waiting for element &lt;input[value=&#34;Google Search&#34;]&gt; to be present for 1000 milliseconds. - expected [32m&#34;visible&#34;[39m but got: [31m&#34;not found&#34;[39m [90m(1034ms)[39m" type="error"><![CDATA[
+    Error
+    at Command.executeCommand (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/node_modules/nightwatch/dist/page-object/command-wrapper.js:235:26)
+    at Page.waitForElementVisible (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/node_modules/nightwatch/dist/page-object/command-wrapper.js:72:33)
+    at Page.submit (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/nightwatch/page-objects/google/search.js:17:10)
+    at DescribeInstance.&lt;anonymous&gt; (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/nightwatch/examples/with-page-objects/google.js:20:14)
+    at Context.call (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/node_modules/nightwatch/dist/testsuite/context.js:413:39)
+    at TestCase.run (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/node_modules/nightwatch/dist/testsuite/testcase.js:50:39)
+    at Runnable.__runFn (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/node_modules/nightwatch/dist/testsuite/index.js:675:84)
+    at Runnable.run (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/node_modules/nightwatch/dist/testsuite/runnable.js:103:27)
+    at TestSuite.executeRunnable (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/node_modules/nightwatch/dist/testsuite/index.js:809:55)
+    at TestSuite.handleRunnable (/Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/node_modules/nightwatch/dist/testsuite/index.js:822:39)
+    ]]></error>
+    
+    </testcase>
+  
+
+  
+    <system-err>
+       NoSuchElementError
+   An element could not be located on the page using the given search parameters.
+
+    Try fixing by :
+    1. Please inspect the html before the step
+    2. Verify if an element with the mentioned selector is present in the DOM tree
+
+    Error location:
+    /Users/Akash/Visual Studio Code Projects/hackathon-StephanAkashElvira/nightwatch/examples/with-page-objects/google.js:
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+     17 | 
+     18 |   it(&#39;should find nightwatch.js in results&#39;, function(browser) {
+     19 |     homePage.setValue(&#39;@searchBar&#39;, &#39;Nightwatch.js&#39;); 
+     20 |     homePage.submit();
+     21 | 
+    –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+
+    </system-err>
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>

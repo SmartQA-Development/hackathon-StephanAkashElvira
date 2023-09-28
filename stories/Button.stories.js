@@ -1,45 +1,72 @@
-import { Button } from './Button';
+import React from 'react';
+import Button from './Button'; // Assuming Button component is correctly imported and located
 
-// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Example/Button',
+  title: "Example/Button",
   component: Button,
-  parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'centered',
-  },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
-  tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
+  
+  parameters: {
+    a11y: {
+      // Optional selector to inspect
+      element: '#root',
+      
+      // Show the individual axe-rules as Nightwatch assertions (can be verbose if there are many violations)
+      runAssertions: false,
+      
+      // Show the complete Accessibility test report (by default, only rule violations will be shown)
+      verbose: false,
+      config: {
+        rules: [
+          {
+            // The autocomplete rule will not run based on the CSS selector provided
+            id: 'autocomplete-valid',
+            selector: '*:not([autocomplete="nope"])',
+          },
+          {
+            // Setting the enabled option to false will disable checks for this particular rule on all stories.
+            id: 'image-alt',
+            enabled: false,
+          },
+          {
+            id: 'input-button-name',
+            enabled: true
+          },
+          {
+            id: 'color-contrast',
+            enabled: true
+          }
+        ],
+      },
+      options: {},
+      manual: true
+    }
+  }
 };
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary = {
-  args: {
-    primary: true,
-    label: 'Button',
-  },
+const Template = (args) => <Button {...args} />;
+
+export const Primary = Template.bind({});
+Primary.args = {
+  primary: true,
+  label: 'Button',
 };
 
-export const Secondary = {
-  args: {
-    label: 'Button',
-  },
+export const Secondary = Template.bind({});
+Secondary.args = {
+  label: 'Button',
 };
 
-export const Large = {
-  args: {
-    size: 'large',
-    label: 'Button',
-  },
+export const Large = Template.bind({});
+Large.args = {
+  size: 'large',
+  label: 'Button',
 };
 
-export const Small = {
-  args: {
-    size: 'small',
-    label: 'Button',
-  },
+export const Small = Template.bind({});
+Small.args = {
+  size: 'small',
+  label: 'Button',
 };
